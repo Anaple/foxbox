@@ -12,12 +12,12 @@ module.exports = {
 
   configs: {
     all: {
-      plugins: ["@foxglove/studio"],
+      plugins: ["@lichtblick/suite"],
       rules: {
-        "@foxglove/studio/link-target": "error",
-        "@foxglove/studio/lodash-ramda-imports": "error",
-        "@foxglove/studio/ramda-usage": "error",
-        "@foxglove/studio/no-map-type-argument": "error",
+        "@lichtblick/suite/link-target": "error",
+        "@lichtblick/suite/lodash-ramda-imports": "error",
+        "@lichtblick/suite/ramda-usage": "error",
+        "@lichtblick/suite/no-map-type-argument": "error",
       },
     },
   },

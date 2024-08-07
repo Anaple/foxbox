@@ -78,7 +78,7 @@ import WorkspaceContextProvider from "@lichtblick/suite-base/providers/Workspace
 import ICONS from "@lichtblick/suite-base/theme/icons";
 import { parseAppURLState } from "@lichtblick/suite-base/util/appURLState";
 import isDesktopApp from "@lichtblick/suite-base/util/isDesktopApp";
-import { Link, Typography } from "@mui/material";
+import { Link, Typography, useTheme } from "@mui/material";
 import { t } from "i18next";
 import { useSnackbar } from "notistack";
 import { extname } from "path";
@@ -88,6 +88,7 @@ import { makeStyles } from "tss-react/mui";
 
 import { useWorkspaceActions } from "./context/Workspace/useWorkspaceActions";
 import { ConfigProvider, theme } from "antd";
+import VerticalAppBar from "./components/AppBar/VerticalAppBar";
 
 const log = Logger.getLogger(__filename);
 

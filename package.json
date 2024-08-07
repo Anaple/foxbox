@@ -132,15 +132,13 @@
     "@ant-design/pro-components": "2.6.10",
     "@fluentui/react-components": "9.54.9",
     "@fluentui/react-icons": "2.0.252",
+    "@lichtblick/hooks": "workspace:*",
+    "@lichtblick/log": "workspace:*",
+    "@lichtblick/suite": "workspace:*",
     "@mui/material": "5.13.5",
     "antd": "5.20.0",
     "react-use": "17.4.0",
     "rehype-raw": "6.1.1",
-    "@lichtblick/hooks": "workspace:*",
-    "@lichtblick/log": "workspace:*",
-    "@lichtblick/suite": "workspace:*",
-
-
     "vm-browserify": "1.1.2"
   }
 }

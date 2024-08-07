@@ -3,19 +3,19 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import { CheckOutlined, DisconnectOutlined, LoadingOutlined } from "@ant-design/icons";
-import { ErrorCircle16Filled } from "@fluentui/react-icons";
+// import { ErrorCircle16Filled } from "@fluentui/react-icons";
 import {
   MessagePipelineContext,
   useMessagePipeline,
 } from "@lichtblick/suite-base/components/MessagePipeline";
-import Stack from "@lichtblick/suite-base/components/Stack";
-import TextMiddleTruncate from "@lichtblick/suite-base/components/TextMiddleTruncate";
-import WssErrorModal from "@lichtblick/suite-base/components/WssErrorModal";
-import { useWorkspaceActions } from "@lichtblick/suite-base/context/Workspace/useWorkspaceActions";
+// import Stack from "@lichtblick/suite-base/components/Stack";
+// import TextMiddleTruncate from "@lichtblick/suite-base/components/TextMiddleTruncate";
+// import WssErrorModal from "@lichtblick/suite-base/components/WssErrorModal";
+// import { useWorkspaceActions } from "@lichtblick/suite-base/context/Workspace/useWorkspaceActions";
 import { PlayerPresence } from "@lichtblick/suite-base/players/types";
-import { CircularProgress, IconButton } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { makeStyles } from "tss-react/mui";
+// import { CircularProgress, IconButton } from "@mui/material";
+// import { useTranslation } from "react-i18next";
+// import { makeStyles } from "tss-react/mui";
 
 // import { EndTimestamp } from "./EndTimestamp";
 

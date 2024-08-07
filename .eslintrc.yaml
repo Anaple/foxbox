@@ -21,7 +21,7 @@ extends:
   - plugin:@foxglove/react
   - plugin:@foxglove/jest
   - plugin:storybook/recommended
-  - plugin:@foxglove/studio/all
+  - plugin:@lichtblick/suite/all
 
 settings:
   import/internal-regex: "^@foxglove"
@@ -160,7 +160,7 @@ overrides:
       # https://eslint.org/docs/latest/rules/no-loop-func
       "no-loop-func": error
 
-      # unused vars must have `_` prefix, but `_` alone is not ignored (see @foxglove/studio/lodash-imports)
+      # unused vars must have `_` prefix, but `_` alone is not ignored (see @lichtblick/suite/lodash-imports)
       "@typescript-eslint/no-unused-vars":
         - error
         - vars: all

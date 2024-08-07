@@ -322,7 +322,7 @@ export default function Start(): JSX.Element {
   return (
     <Stack className={classes.grid}>
       <header className={classes.header}>
-        <LichtblickLogoText color="primary" className={classes.logo} />
+        <LichtblickLogoText color="primary" />
       </header>
       <Stack className={classes.content}>
         <Stack gap={4}>
