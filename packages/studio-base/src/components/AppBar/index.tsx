@@ -2,39 +2,19 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import {
-  ChevronDown12Regular,
-  PanelLeft24Filled,
-  PanelLeft24Regular,
-  PanelRight24Filled,
-  PanelRight24Regular,
-  SlideAdd24Regular,
-} from "@fluentui/react-icons";
-import { Avatar, IconButton, Tooltip } from "@mui/material";
+
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import tc from "tinycolor2";
 import { makeStyles } from "tss-react/mui";
 
-import { FoxboxLogo } from "@foxglove/studio-base/components/FoxboxLogo";
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppContext } from "@foxglove/studio-base/context/AppContext";
-import {
-  LayoutState,
-  useCurrentLayoutSelector,
-} from "@foxglove/studio-base/context/CurrentLayoutContext";
-import {
-  WorkspaceContextStore,
-  useWorkspaceStore,
-} from "@foxglove/studio-base/context/Workspace/WorkspaceContext";
-import { useWorkspaceActions } from "@foxglove/studio-base/context/Workspace/useWorkspaceActions";
+
 
 import { AddPanelMenu } from "./AddPanelMenu";
 import { AppBarContainer } from "./AppBarContainer";
-import { AppBarIconButton } from "./AppBarIconButton";
-import { AppMenu } from "./AppMenu";
 import { CustomWindowControls, CustomWindowControlsProps } from "./CustomWindowControls";
-import { DataSource } from "./DataSource";
+
 import { SettingsMenu } from "./SettingsMenu";
 
 const useStyles = makeStyles<{ debugDragRegion?: boolean }, "avatar">()((
@@ -152,9 +132,6 @@ export type AppBarProps = CustomWindowControlsProps & {
   debugDragRegion?: boolean;
 };
 
-const selectHasCurrentLayout = (state: LayoutState) => state.selectedLayout != undefined;
-const selectLeftSidebarOpen = (store: WorkspaceContextStore) => store.sidebars.left.open;
-const selectRightSidebarOpen = (store: WorkspaceContextStore) => store.sidebars.right.open;
 
 export function AppBar(props: AppBarProps): JSX.Element {
   const {
@@ -168,23 +145,14 @@ export function AppBar(props: AppBarProps): JSX.Element {
     onUnmaximizeWindow,
     showCustomWindowControls = false,
   } = props;
-  const { classes, cx, theme } = useStyles({ debugDragRegion });
-  const { t } = useTranslation("appBar");
+  const { classes } = useStyles({ debugDragRegion });
+  // const { t } = useTranslation("appBar");
 
   const { appBarLayoutButton } = useAppContext();
 
-  const hasCurrentLayout = useCurrentLayoutSelector(selectHasCurrentLayout);
-
-  const leftSidebarOpen = useWorkspaceStore(selectLeftSidebarOpen);
-  const rightSidebarOpen = useWorkspaceStore(selectRightSidebarOpen);
-
-  const { sidebarActions } = useWorkspaceActions();
-
-  const [appMenuEl, setAppMenuEl] = useState<undefined | HTMLElement>(undefined);
   const [userAnchorEl, setUserAnchorEl] = useState<undefined | HTMLElement>(undefined);
   const [panelAnchorEl, setPanelAnchorEl] = useState<undefined | HTMLElement>(undefined);
 
-  const appMenuOpen = Boolean(appMenuEl);
   const userMenuOpen = Boolean(userAnchorEl);
   const panelMenuOpen = Boolean(panelAnchorEl);
 
@@ -194,7 +162,7 @@ export function AppBar(props: AppBarProps): JSX.Element {
         <div className={classes.toolbar}>
           <div className={classes.start}>
             <div className={classes.startInner}>
-              <IconButton
+              {/* <IconButton
                 className={cx(classes.logo, { "Mui-selected": appMenuOpen })}
                 color="inherit"
                 id="app-menu-button"
@@ -213,8 +181,8 @@ export function AppBar(props: AppBarProps): JSX.Element {
                   className={classes.dropDownIcon}
                   primaryFill={theme.palette.common.white}
                 />
-              </IconButton>
-              <AppMenu
+              </IconButton> */}
+              {/* <AppMenu
                 open={appMenuOpen}
                 anchorEl={appMenuEl}
                 handleClose={() => {
@@ -237,19 +205,19 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 }}
               >
                 <SlideAdd24Regular />
-              </AppBarIconButton>
+              </AppBarIconButton> */}
             </div>
           </div>
 
           <div className={classes.middle}>
-            <DataSource />
+            {/* <DataSource /> */}
           </div>
 
           <div className={classes.end}>
             <div className={classes.endInner}>
               {appBarLayoutButton}
               <Stack direction="row" alignItems="center" data-tourid="sidebar-button-group">
-                <AppBarIconButton
+                {/* <AppBarIconButton
                   title={
                     <>
                       {leftSidebarOpen ? t("hideLeftSidebar") : t("showLeftSidebar")}{" "}
@@ -278,9 +246,9 @@ export function AppBar(props: AppBarProps): JSX.Element {
                   data-tourid="right-sidebar-button"
                 >
                   {rightSidebarOpen ? <PanelRight24Filled /> : <PanelRight24Regular />}
-                </AppBarIconButton>
+                </AppBarIconButton> */}
               </Stack>
-              <Tooltip classes={{ tooltip: classes.tooltip }} title="Profile" arrow={false}>
+              {/* <Tooltip classes={{ tooltip: classes.tooltip }} title="Profile" arrow={false}>
                 <IconButton
                   className={cx(classes.iconButton, { "Mui-selected": userMenuOpen })}
                   aria-label="User profile menu button"
@@ -297,7 +265,7 @@ export function AppBar(props: AppBarProps): JSX.Element {
                 >
                   <Avatar className={classes.avatar} variant="rounded" />
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
               {showCustomWindowControls && (
                 <CustomWindowControls
                   onMinimizeWindow={onMinimizeWindow}

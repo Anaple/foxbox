@@ -9,7 +9,7 @@ import tinycolor from "tinycolor2";
 import { makeStyles } from "tss-react/mui";
 
 import { DataSourceDialogItem } from "@foxglove/studio-base/components/DataSourceDialog/DataSourceDialog";
-import FoxboxLogoText from "@foxglove/studio-base/components/FoxboxLogoText";
+// import FoxboxLogoText from "@foxglove/studio-base/components/FoxboxLogoText";
 import Stack from "@foxglove/studio-base/components/Stack";
 import TextMiddleTruncate from "@foxglove/studio-base/components/TextMiddleTruncate";
 import { useAnalytics } from "@foxglove/studio-base/context/AnalyticsContext";
@@ -19,11 +19,6 @@ import { useWorkspaceActions } from "@foxglove/studio-base/context/Workspace/use
 import { AppEvent } from "@foxglove/studio-base/services/IAnalytics";
 
 const useStyles = makeStyles()((theme) => ({
-  logo: {
-    width: 212,
-    height: "auto",
-    marginLeft: theme.spacing(-1),
-  },
   grid: {
     [theme.breakpoints.up("md")]: {
       display: "grid",
@@ -356,7 +351,7 @@ export default function Start(): JSX.Element {
   return (
     <Stack className={classes.grid}>
       <header className={classes.header}>
-        <FoxboxLogoText color="primary" className={classes.logo} />
+        {/* <FoxboxLogoText color="primary" className={classes.logo} /> */}
       </header>
       <Stack className={classes.content}>
         <Stack gap={4}>

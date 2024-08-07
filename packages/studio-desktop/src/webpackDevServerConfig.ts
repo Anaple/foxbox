@@ -17,7 +17,7 @@ export function webpackDevServerConfig(params: WebpackConfigParams): Configurati
   // for our production and development builds we change the product name when using dev or serve.
   const productName = isRelease
     ? params.packageJson.productName
-    : `${params.packageJson.productName} Dev`;
+    : `${params.packageJson.productName}`;
 
   return {
     // Use empty entry to avoid webpack default fallback to /src

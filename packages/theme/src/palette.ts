@@ -32,16 +32,16 @@ export const dark: PaletteOptions = {
   mode: "dark",
   tonalOffset: 0.15,
   appBar: {
-    main: "#35363A",
+    main: "#1C1C1C95",
     primary: "#9480ed",
-    text: "#ffffff",
+    text: "#313030",
   },
-  primary: { main: "#9480ed" },
-  secondary: { main: "#b1b1b1" },
-  error: { main: "#f54966" },
+  primary: { main: "#1677ff" },
+  secondary: { main: "#bae0ff" },
+  error: { main: "#db3553" },
   warning: { main: "#eba800" },
-  success: { main: "#92c353" },
-  info: { main: "#29bee7" },
+  success: { main: "#107c10" },
+  info: { main: "#fa8c16" },
   text: {
     primary: "#e1e1e4",
     secondary: "#a7a6af",
@@ -69,17 +69,17 @@ export const dark: PaletteOptions = {
     A700: "#d2d5df",
   },
 };
-
+// Anaple Theme Color
 export const light: PaletteOptions = {
   name: "light",
   mode: "light",
   tonalOffset: 0.22,
   appBar: {
-    main: "#27272b",
-    primary: "#9480ed",
-    text: "#ffffff",
+    main: "#f4f4f5",
+    primary: "#000000",
+    text: "#000000",
   },
-  primary: { main: "#6f3be8" },
+  primary: { main: "#002766" },
   secondary: { main: "#808080" },
   error: { main: "#db3553" },
   warning: { main: "#eba800" },

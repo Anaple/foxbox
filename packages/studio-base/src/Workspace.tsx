@@ -10,14 +10,14 @@
 //   found at http://www.apache.org/licenses/LICENSE-2.0
 //   You may not use this file except in compliance with the License.
 
-import { Link, Typography } from "@mui/material";
+import { Link, Typography, useTheme } from "@mui/material";
 import { t } from "i18next";
 import { useSnackbar } from "notistack";
 import { extname } from "path";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
-
+import VerticalAppBar from "@foxglove/studio-base/components/AppBar/VerticalAppBar";
 import Logger from "@foxglove/log";
 import { AppSetting } from "@foxglove/studio-base/AppSetting";
 import AccountSettings from "@foxglove/studio-base/components/AccountSettingsSidebar/AccountSettings";
@@ -88,12 +88,13 @@ import { parseAppURLState } from "@foxglove/studio-base/util/appURLState";
 import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 
 import { useWorkspaceActions } from "./context/Workspace/useWorkspaceActions";
+import { ConfigProvider , theme} from "antd";
 
 const log = Logger.getLogger(__filename);
 
 const useStyles = makeStyles()({
   container: {
-    width: "100%",
+    width: "calc(100% - 60px)",
     height: "100%",
     display: "flex",
     flexDirection: "column",
@@ -101,6 +102,8 @@ const useStyles = makeStyles()({
     flex: "1 1 100%",
     outline: "none",
     overflow: "hidden",
+    marginLeft: "60px",
+        // marginRight: "60px",
   },
 });
 
@@ -567,6 +570,9 @@ function WorkspaceContent(props: WorkspaceProps): JSX.Element {
   const [unappliedSourceArgs, setUnappliedSourceArgs] = useState(
     targetUrlState ? { ds: targetUrlState.ds, dsParams: targetUrlState.dsParams } : undefined,
   );
+  const {
+    palette: { mode: colorScheme },
+  } = useTheme();
 
   const selectEvent = useEvents(selectSelectEvent);
   // Load data source from URL.
@@ -636,6 +642,17 @@ function WorkspaceContent(props: WorkspaceProps): JSX.Element {
 
   return (
     <PanelStateContextProvider>
+      <ConfigProvider
+        theme={{
+          // 1. 单独使用暗色算法
+          algorithm: colorScheme === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
+
+          // 2. 组合使用暗色算法与紧凑算法
+          // algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
+        }}
+      >
+        <VerticalAppBar />
+
       {dataSourceDialog.open && <DataSourceDialog />}
       <DocumentDropListener onDrop={dropHandler} allowedExtensions={allowedDropExtensions} />
       <SyncAdapters />
@@ -679,6 +696,7 @@ function WorkspaceContent(props: WorkspaceProps): JSX.Element {
         )}
       </div>
       <WorkspaceDialogs />
+      </ConfigProvider>
     </PanelStateContextProvider>
   );
 }

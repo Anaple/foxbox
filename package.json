@@ -1,11 +1,11 @@
 {
-  "name": "foxbox",
+  "name": "studio_desktop",
   "version": "1.0.9",
   "license": "MPL-2.0",
   "private": true,
-  "productName": "Foxbox",
+  "productName": "StudioDesktop",
   "description": "Core components of Foxbox",
-  "productDescription": "Foxbox",
+  "productDescription": "Studio",
   "packageManager": "yarn@3.6.3",
   "repository": {
     "type": "git",
@@ -128,10 +128,15 @@
     "webpack-hot-middleware": "2.26.0"
   },
   "dependencies": {
+    "@ant-design/icons": "5.2.5",
+    "@ant-design/pro-components": "2.6.10",
+    "@fluentui/react-components": "9.54.9",
+    "@fluentui/react-icons": "2.0.252",
     "@foxglove/hooks": "workspace:*",
     "@foxglove/log": "workspace:*",
     "@foxglove/studio": "workspace:*",
     "@mui/material": "5.13.5",
+    "antd": "5.20.0",
     "react-use": "17.4.0",
     "rehype-raw": "6.1.1"
   }
