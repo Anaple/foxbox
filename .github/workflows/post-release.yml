@@ -22,8 +22,8 @@ jobs:
 
       - name: Configure git
         run: |
-          git config user.name "Foxglove"
-          git config user.email "contact@foxglove.dev"
+          git config user.name "Lichtblick"
+          git config user.email "lichtblick@bmwgroup.com"
 
       - id: bump-version
         uses: foxglove/action-bump-version@v1
@@ -36,12 +36,12 @@ jobs:
         uses: octokit/request-action@v2.x
         with:
           route: POST /repos/{owner}/{repo}/merges
-          owner: foxglove
-          repo: studio
+          owner: lichtblick-suite
+          repo: lichtblick
           base: main
           head: release/${{ github.event.release.tag_name }}
         env:
-          GITHUB_TOKEN: ${{ secrets.LITCHBLICK_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.LICHTBLICK_GITHUB_TOKEN }}
 
   npm:
     name: Publish to NPM
@@ -62,7 +62,7 @@ jobs:
 
       - run: yarn install --immutable
 
-      - run: npm publish ./packages/studio
+      - run: npm publish ./packages/suite
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 

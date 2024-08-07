@@ -2,23 +2,22 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+import { Condvar } from "@lichtblick/den/async";
+import CssBaseline from "@lichtblick/suite-base/components/CssBaseline";
+import GlobalCss from "@lichtblick/suite-base/components/GlobalCss";
+import MultiProvider from "@lichtblick/suite-base/components/MultiProvider";
+import StudioToastProvider from "@lichtblick/suite-base/components/StudioToastProvider";
+import AppConfigurationContext from "@lichtblick/suite-base/context/AppConfigurationContext";
+import { initI18n, Language } from "@lichtblick/suite-base/i18n";
+import TimelineInteractionStateProvider from "@lichtblick/suite-base/providers/TimelineInteractionStateProvider";
+import ReadySignalContext from "@lichtblick/suite-base/stories/ReadySignalContext";
+import ThemeProvider from "@lichtblick/suite-base/theme/ThemeProvider";
+import { makeMockAppConfiguration } from "@lichtblick/suite-base/util/makeMockAppConfiguration";
+import waitForFonts from "@lichtblick/suite-base/util/waitForFonts";
 import { GlobalStyles } from "@mui/material";
 import { Story, StoryContext } from "@storybook/react";
 import { useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-
-import { Condvar } from "@foxglove/den/async";
-import CssBaseline from "@foxglove/studio-base/components/CssBaseline";
-import GlobalCss from "@foxglove/studio-base/components/GlobalCss";
-import MultiProvider from "@foxglove/studio-base/components/MultiProvider";
-import StudioToastProvider from "@foxglove/studio-base/components/StudioToastProvider";
-import AppConfigurationContext from "@foxglove/studio-base/context/AppConfigurationContext";
-import { initI18n, Language } from "@foxglove/studio-base/i18n";
-import TimelineInteractionStateProvider from "@foxglove/studio-base/providers/TimelineInteractionStateProvider";
-import ReadySignalContext from "@foxglove/studio-base/stories/ReadySignalContext";
-import ThemeProvider from "@foxglove/studio-base/theme/ThemeProvider";
-import { makeMockAppConfiguration } from "@foxglove/studio-base/util/makeMockAppConfiguration";
-import waitForFonts from "@foxglove/studio-base/util/waitForFonts";
 
 import "./styles.css";
 
@@ -165,7 +164,7 @@ function StudioContextProviders({
 
 function WithContextProviders(Child: Story, ctx: StoryContext): JSX.Element {
   if (
-    (ctx.parameters.fileName as string).includes("/packages/studio-base/") ||
+    (ctx.parameters.fileName as string).includes("/packages/suite-base/") ||
     (ctx.parameters.fileName as string).includes("/packages/theme/")
   ) {
     return (

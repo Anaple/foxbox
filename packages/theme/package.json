@@ -4,17 +4,17 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/foxglove/studio.git"
+    "url": "https://github.com/bmw-software-engineering/lichtblick.git"
   },
   "author": {
-    "name": "Foxglove Technologies",
-    "email": "support@foxglove.dev"
+    "name": "Lichtblick",
+    "email": "lichtblick@bmwgroup.com"
   },
-  "homepage": "https://foxglove.dev/",
+  "homepage": "https://github.com/bmw-software-engineering",
   "main": "./src/index",
   "devDependencies": {
-    "@emotion/react": "11.11.3",
-    "@emotion/styled": "11.11.0",
+    "@emotion/react": "11.13.0",
+    "@emotion/styled": "11.13.0",
     "@fluentui/react-icons": "2.0.224",
     "@foxglove/tsconfig": "2.0.0",
     "@mui/icons-material": "5.15.5",
